@@ -1,8 +1,7 @@
 import Link from 'next/link'
 
 const PokemonCard = ({ pokemon = {} }) => {
-  const { id, name, image, maxCP, maxHP, attacks: { special } } = pokemon
-  console.log(id, name, image, maxCP, maxHP, special)
+  const { id, name, image } = pokemon
   return (
     <div className='card has-background-success box'>
       <div className='card-image'>
@@ -23,7 +22,7 @@ const PokemonCard = ({ pokemon = {} }) => {
           </div>
         </div>
         <div className='content'>
-          <Link href='/pokemon/[id]'>
+          <Link href='/pokemon/[slug]' as={`pokemon/${name}`}>
             <a>Learn More</a>
           </Link>
         </div>
@@ -32,7 +31,5 @@ const PokemonCard = ({ pokemon = {} }) => {
 
   )
 }
-
-
 
 export default PokemonCard

@@ -6,15 +6,6 @@ const POKEMONS_QUERY = gql`
   id
   name
   image
-  maxCP
-  maxHP
-  attacks{
-    special{
-      name
-      type
-      damage
-    }
-  }
 }
 }
 `
